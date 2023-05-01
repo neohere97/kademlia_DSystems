@@ -1,11 +1,11 @@
 import argparse
 import asyncio
 import logging
-import threading
 from aiohttp import web
 from kademlia.network import Server
 import time
 import os
+from multiprocessing import Process
 
 number_of_nodes = 0  # global variable to store the number of nodes
 base_port = 0
@@ -73,10 +73,11 @@ async def spawn_node(kademlia_port, http_port, number_of_nodes, base_port):
         await wait_task
 
 
-def run_node_on_thread(kademlia_port, http_port, number_of_nodes, base_port):
+def run_node_on_process(kademlia_port, http_port, number_of_nodes, base_port):
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     loop.run_until_complete(spawn_node(kademlia_port, http_port, number_of_nodes, base_port))
+
 
 
 def main():
@@ -97,25 +98,25 @@ def main():
     kademlia_ports = [base_port + i for i in range(number_of_nodes)]
     http_ports = [base_port_http + i for i in range(number_of_nodes)]
 
-    print("Kademlia ports ->",kademlia_ports)
-    print("HTTP Kademlia ports ->",http_ports)
+    print("Kademlia ports ->", kademlia_ports)
+    print("HTTP Kademlia ports ->", http_ports)
 
-    # Spawn multiple instances of nodes, each on a separate thread
-    threads = [
-        threading.Thread(
-            target=run_node_on_thread,
+    # Spawn multiple instances of nodes, each in a separate process
+    processes = [
+        Process(
+            target=run_node_on_process,
             args=(kademlia_port, http_port, number_of_nodes, base_port),
         )
         for kademlia_port, http_port in zip(kademlia_ports, http_ports)
     ]
 
-    # Start the threads
-    for thread in threads:
-        thread.start()
+    # Start the processes
+    for process in processes:
+        process.start()
 
-    # Wait for threads to finish
-    for thread in threads:
-        thread.join()
+    # Wait for processes to finish
+    for process in processes:
+        process.join()
 
 
 if __name__ == "__main__":
