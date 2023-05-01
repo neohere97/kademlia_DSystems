@@ -4,6 +4,7 @@ import logging
 import threading
 from aiohttp import web
 from kademlia.network import Server
+import time
 
 number_of_nodes = 0  # global variable to store the number of nodes
 base_port = 0
@@ -12,8 +13,8 @@ async def run(node, port, number_of_nodes,base_port):
     await node.listen(port)
     for i in range(base_port, port+1):
         await node.bootstrap([("0.0.0.0", i)])
-
-
+        time.sleep(0.1)
+        
 
 async def set_key(request):
     node = request.app["node"]
@@ -80,8 +81,8 @@ def main():
     base_port_http = args.base_port_http
 
     # Generate a list of ports for the Kademlia and HTTP instances
-    kademlia_ports = [base_port + i * 2 for i in range(number_of_nodes)]
-    http_ports = [base_port_http + i * 2  for i in range(number_of_nodes)]
+    kademlia_ports = [base_port + i for i in range(number_of_nodes)]
+    http_ports = [base_port_http + i for i in range(number_of_nodes)]
 
     print("Kademlia ports ->",kademlia_ports)
     print("HTTP Kademlia ports ->",http_ports)
