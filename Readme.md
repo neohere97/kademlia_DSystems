@@ -2,7 +2,7 @@
 
 ## To Run, use the below command
 
-    python3 <N> <Base port 1> <Base Port 2>
+    python3 kadtest.py <N> <Base port 1> <Base Port 2>
 N -> Number of Nodes
 Base Port 1 -> Port Number at which Kademlia Nodes will start
 Base Port 2 -> Port Number at which HTTP servers of nodes will start
