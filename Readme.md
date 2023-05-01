@@ -1,5 +1,7 @@
 
 
+
+
 ## To Run, use the below command
 
     python3 <N> <Base port 1> <Base Port 2>
@@ -15,3 +17,11 @@
     python3 5 8000 9000
 
 The above command creates 5 node kademlia DHT with node servers set up from port 8000 and HTTP servers set up from port 9000
+
+## HTTP APIs
+
+ - localhost:<httpport>/get/<key>
+ - localhost:<httpport>/set/<key>/<value>
+ - localhost:<httpport>/<file>/<filename>
+
+
