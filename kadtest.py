@@ -5,6 +5,7 @@ import threading
 from aiohttp import web
 from kademlia.network import Server
 import time
+import os
 
 number_of_nodes = 0  # global variable to store the number of nodes
 base_port = 0
@@ -31,11 +32,23 @@ async def get_key(request):
     return web.Response(text=f"Key '{key}' has value '{value}'")
 
 
+async def serve_file(request):
+    filename = request.match_info.get("filename", "")
+    file_path = os.path.join(os.getcwd(), "files", filename)
+    try:
+        with open(file_path, "rb") as file:
+            file_content = file.read()
+        return web.Response(body=file_content, content_type="application/octet-stream")
+    except FileNotFoundError:
+        return web.Response(status=404, text=f"File '{filename}' not found")
+
+
 async def create_app(node):
     app = web.Application()
     app["node"] = node
     app.router.add_get("/get/{key}", get_key)
     app.router.add_get("/set/{key}/{value}", set_key)
+    app.router.add_get("/file/{filename}", serve_file)
     return app
 
 
