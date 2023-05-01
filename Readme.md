@@ -21,7 +21,7 @@ The above command creates 5 node kademlia DHT with node servers set up from port
 ## HTTP APIs
 
  - localhost:<httpport>/get/< key >
- - localhost:<httpport>/set/<key>/< value >
+ - localhost:<httpport>/set/< key >/< value >
  - localhost:<httpport>/< file >/< filename >
 
 
