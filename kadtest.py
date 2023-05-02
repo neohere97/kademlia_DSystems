@@ -14,7 +14,8 @@ async def run(node, port, number_of_nodes,base_port):
     await node.listen(port)
     for i in range(base_port, port+1):
         await node.bootstrap([("0.0.0.0", i)])
-        time.sleep(0.1)
+        time.sleep(0.1);
+   
         
 
 async def set_key(request):
@@ -28,6 +29,7 @@ async def set_key(request):
 async def get_key(request):
     node = request.app["node"]
     key = request.match_info.get("key", "")
+    print(key);
     value = await node.get(key)
     return web.Response(text=f"Key '{key}' has value '{value}'")
 
