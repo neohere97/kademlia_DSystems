@@ -1,1 +1,1 @@
-kademlia aiohttp asyncio
+kademlia aiohttp asyncio requests
