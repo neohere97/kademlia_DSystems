@@ -35,10 +35,24 @@ Report : https://www.overleaf.com/project/63e0323d40d9ac119b72cbc9
 slides: https://docs.google.com/presentation/d/1ACowhPyiXjJyBREm-huRKVQ9gyt8OOgd7PWM8goPOPk/edit?usp=sharing
 
 
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 |
-| -------- | -------- | -------- | -------- | -------- |
-| Row 1, Column 1 | Row 1, Column 2 | Row 1, Column 3 | Row 1, Column 4 | Row 1, Column 5 |
-| Row 2, Column 1 | Row 2, Column 2 | Row 2, Column 3 | Row 2, Column 4 | Row 2, Column 5 |
-| Row 3, Column 1 | Row 3, Column 2 | Row 3, Column 3 | Row 3, Column 4 | Row 3, Column 5 |
-| Row 4, Column 1 | Row 4, Column 2 | Row 4, Column 3 | Row 4, Column 4 | Row 4, Column 5 |
-| Row 5, Column 1 | Row 5, Column 2 | Row 5, Column 3 | Row 5, Column 4 | Row 5, Column 5 |
+| Clients/Nodes | 5 | 10| 25 | 50 | 100 |
+| -------- | -------- | -------- | -------- | -------- |-------- |
+| 1  | 8.63 | 8.18 | 8.23 | 9.48 | 11.38 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
