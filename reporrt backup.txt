@@ -1,0 +1,29 @@
+
+report backup
+
+
+
+\section*{Evaluation Methodology}
+\noindent To evaluate and compare the performance of a Kademlia-based peer-to-peer (P2P) network and a traditional centralized server for serving images, we have used the following set of tests. These tests address various aspects of each system, such as latency, throughput, bandwidth consumption, scalability, fault tolerance, and security. We will select and implement a subset of these tests to provide insights into the most relevant aspects of both systems for our specifihttps://www.overleaf.com/project/63e0323d40d9ac119b72cbc9c use case.
+
+1. Latency: Measuring the time taken to request and receive an image from both systems to determine which offers better user experience and faster image retrieval.
+
+2. Throughput: Assessing the number of requests per second that each system can handle, with higher throughput indicating a more efficient system capable of serving more users concurrently.
+
+3. Bandwidth Consumption: Comparing the amount of network bandwidth used by both systems to serve images, with lower consumption being beneficial for network efficiency and cost reduction.
+
+4. Scalability: Testing the ability of each system to handle an increasing number of users and requests to evaluate their capacity to scale under different load scenarios.
+
+5. Data Redundancy and Fault Tolerance: Measuring how well each system can handle node failures, data loss, and network partitioning, with a higher level of fault tolerance indicating a more reliable system.
+
+6. Response Time Consistency: Evaluating the consistency of response times for both systems under different load conditions to determine which offers a smoother user experience and reliable performance.
+
+7. Load Balancing: Assessing how effectively each system distributes the load among its nodes or servers, with efficient load balancing improving overall performance by preventing bottlenecks.
+
+8. Security and Privacy: Analyzing the security mechanisms employed by both systems, such as data encryption, access control, and user authentication, to determine which offers better protection for user data and privacy.
+
+9. Storage Efficiency: Comparing the storage requirements for both systems, taking into account factors like data redundancy and compression, with a more efficient storage system minimizing costs and resource usage.
+
+10. Ease of Deployment and Maintenance: Evaluating the complexity and effort required to deploy, configure, and maintain each system, with a simpler and more manageable system reducing operational costs and the risk of errors.
+
+Based on our specific requirements and constraints, we will choose a subset of these tests to implement and analyze. The results of these tests will enable us to gain a comprehensive understanding of the strengths and weaknesses of both the Kademlia-based P2P network and the traditional centralized server for serving images. This information will be instrumental in making informed decisions about which technology is best suited for our specific needs and objectives.
