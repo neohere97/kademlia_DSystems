@@ -36,7 +36,7 @@ async def get_key(request):
 
 async def serve_file(request):
     filename = request.match_info.get("filename", "")
-    file_path = os.path.join(os.getcwd(), "files", filename)
+    file_path = os.path.join(os.getcwd(), "flower_images", filename)
     try:
         with open(file_path, "rb") as file:
             file_content = file.read()
