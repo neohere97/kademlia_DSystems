@@ -1,8 +1,15 @@
+import argparse
 import requests
 from urllib.parse import quote
 # Replace <port> with the appropriate port number
+
+parser = argparse.ArgumentParser(description="Loading to N number of server nodes.")
+parser.add_argument("N", type=int, help="The number of nodes to create.")
+
+args = parser.parse_args()
+
 base_port = 9000
-num_nodes = 10
+num_nodes = args.N
 
 with open('file_names.txt', 'r') as file:
     names = [name.strip() for name in file.readlines()]

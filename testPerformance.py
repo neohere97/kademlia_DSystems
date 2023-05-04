@@ -1,4 +1,22 @@
 
+# import os
+
+# # Fork a new process
+# pid = os.fork()
+
+# # Child process
+
+# if pid == 0:
+#     # Execute ls command
+#     os.execv('/bin/ls', ['/bin/ls', '-l'])
+
+# # Parent process
+# else:
+#     # Wait for child to finish
+#     os.waitpid(pid, 0)
+
+
+
 
 import requests
 
@@ -32,8 +50,8 @@ for i in range(number_of_requests):
     ip = serverIP
     port = serverPort[i % number_of_nodes]
     key = lines[i% keyLen ]
-    value = 'http://localhost:9000/file/' + key 
-    response = requests.get('http://localhost:9000/get/' + key )
+    value = 'http://localhost:9000/file/' + str(key)
+    response = requests.get('http://localhost:' + str(port) + '/get/' + key )
     print(response.text)
    
 
